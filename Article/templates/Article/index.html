@@ -1,0 +1,259 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<!-- Title -->
+<title>Surenjanath Singh Medium Website</title>
+
+<!-- Meta -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Cache-control" content="public">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Website that shows all my medium Articles">
+<meta name="keywords" content="Personal Page">
+<meta name="author" content="Suelo">
+
+<link rel="shortcut icon" href="{% static 'Article/images/favicon.png' %}">
+
+
+<!-- Retina Images -->
+<script>if((window.devicePixelRatio===undefined?1:window.devicePixelRatio)>1)
+    document.cookie='HTTP_IS_RETINA=1;path=/';</script>
+<!-- End Retina Images -->
+
+<!-- Google Web Fonts -->
+<link href='http://fonts.googleapis.com/css?family=Raleway:400,100,200,300,600,700,500' rel='stylesheet' type='text/css'>
+
+<!-- Stylesheets -->
+<link rel="stylesheet" type="text/css" href="{% static 'Article/css/bootstrap.min.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'Article/css/animations.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'Article/css/font-awesome.min.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'Article/css/flaticon.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'Article/css/owl.carousel.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'Article/css/owl.theme.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'Article/css/style.min.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'Article/colors/blue.css' %}" id="colors" />
+
+</head>
+
+<body>
+
+<!-- Loader -->
+<div id="page-loader">	</div>
+<!-- Loader / End -->
+
+<!-- Header  -->
+<header id="nav-content" class="vertical-nav nav-white">
+
+	<!-- Logo -->
+	<div class="my-logo">
+    	<a href="#profile"><img src="{% static 'Article/images/my-photo.png' %}" alt="" /></a>
+    </div>
+    <div>
+      	<center>
+          <p>
+          <h5>About Me</h5>
+        </p>
+      He is the kindest, <br>most intentional person who pays </br>attention to detail,
+      <br>listens so well, </br>and takes the time to pour into his works
+      and get the job done.
+        </center>
+      </div>
+
+    <!-- Navigation -->
+    <ul class="menu nav me-nav">
+    	<li class="menu-item active"><a href="#profile"><span>Profile</span><i class="fa fa-user"></i></a></li>
+        <li class="menu-item"><a href="#blog"><span>Articles</span><i class="fa fa-pencil"></i></a></li>
+
+    </ul>
+
+    <!-- Copyright -->
+    <span class="copyright hidden-md">© 2021 <b>Surenjanath Singh</b>.</span>
+
+</header>
+<!-- Header / End -->
+
+<!-- Page Content -->
+<div id="page-content">
+
+	<!-- Profile -->
+	<section id="profile" class="black">
+    <!-- Contact Form -->
+    <div id="contact-form-holder" class="dark">
+      <div class="contact-form-trigger animated slide-in-right appear-second"><i class="flaticon-chat26"></i></div>
+      <form action="{% url 'Add' %}" role="form" id="contact-form" method="POST">
+        {% csrf_token %}
+        <div class="">
+          <p> <h4>Feedback Form </h4></p>
+        </div>
+        <div class="form-group">
+          <label>Name:</label>
+          {{ Form.Name }}
+        </div>
+        <div class="form-group">
+          <label>Email:</label>
+          {{ Form.Email }}
+        </div>
+        <div class="form-group">
+          <label>Feedback:</label>
+          {{ Form.Feedback }}
+        </div>
+        <button type="submit" class="btn btn-default">Submit <i class="icon-after fa fa-chevron-right"></i></button>
+      </form>
+    </div>
+    	<!-- Background photo -->
+    	<div id="profile-bg" class="editable-alpha" data-alpha="40"><img src="{% static 'Article/images/backgrounds/profile-bg.png' %}" alt="" /></div>
+
+    	<div class="content padded dark">
+
+        	<!-- Top Bar -->
+        	<div class="top-bar">
+
+            	<!-- Social media -->
+            	<div class="pull-left">
+                	<span class="hiddend-sm hidden-xs">Check out my social media! &nbsp; &nbsp; </span>
+                    <ul class="social-icons si-pull-up">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="#"><i class="fa fa-github"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+
+			<!-- Profile Content -->
+            <div class="profile-content">
+            	<h1 class="short">Surenjanath Singh</h1>
+                <h5>I am a <span class="text-primary">Python</span> developer.</h5>
+                <a href="" class="btn btn-primary" target="_blank">Read My articles on Medium</a>
+
+            </div>
+
+
+            <!-- Bottom Bar -->
+            <div class="bottom-bar profile-bottom-bar hidden-xs">
+
+            	<!-- Contact List -->
+                <ul class="list-inline">
+                  <li><i class="inline-icon icon-before-and-after text-primary fa fa-map-marker"></i>
+                    Somewhere in this universe is where I am from
+                  </li>
+                  <li><i class="inline-icon icon-before-and-after text-primary fa fa-comment"></i>
+                    <a href="#">surenjanath.singh@gmail.com</a>
+                  </li>
+                  <li>
+                    <i class="inline-icon icon-before-and-after text-primary fa fa-phone"></i>Phone Number</li>
+                </ul>
+
+            </div>
+        </div>
+    </section>
+    <!-- Profile / End -->
+
+    <!-- Blog -->
+    <section id="blog">
+    	<div class="content padded">
+          <div  class="row">
+            <div class="col-lg-12">
+
+              <!-- Post Carousel -->
+              <div class="post-carousel animated slide-in-top">
+                <!-- Single Post -->
+                <article class="post post-carousel-item">
+                    <div class="post-image"><img src="{% static 'Article/images/blog/post_01.jpg' %}" alt="" /></div>
+                    <div class="post-content-holder">
+                        <div class="post-content">
+                            <div class="post-info clearfix">
+                                <span class="post-date">22 May, 2014</span>
+                                <div class="post-meta">
+                                    <span><i class="fa fa-comment"></i><a href="#">4 comments</a></span>
+                                    <span><i class="fa fa-tag"></i><a href="#">Webdesign</a></span>
+                                </div>
+                            </div>
+                            <div class="post-text">
+                                <h3><a href="single-post.html">Awesome Seattle Cycle Trip</a></h3>
+                                <p class="lead">Per sint eirmod expetenda te. Pro ne essent.</p>
+                                <p>Per ea tibique fabellas electram. Ea aliquam corpora vis. Ne quot civibus atomorum quo. </p>
+                                <a href="single-post.html" class="btn btn-primary btn-sm">Read more</a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+              </div>
+              <div  class="row">
+                <div class="blog-slider-holder  black dark">
+                      <!-- Top Bar -->
+                    <div class="top-bar blog-slider-top-bar">
+                        <!-- Go Back -->
+                      <div class="pull-left">
+                            <h5>Visitors' Feedback</h5>
+                      </div>
+                      </div>
+
+                        <div class="blog-slider">
+
+                          {% for feedback in Feedbacks.all %}
+
+                          <!-- Single Slide -->
+                          <article class="blog-slide content padded">
+                              <!-- Blockquote -->
+                            <h6 class="text-muted long">Date created : {{feedback.Created}}</h6>
+                            <blockquote>
+                              <p>{{feedback.Feedback}}</p>
+                              <footer>Someone named <cite title="Source Title">{{feedback.Name}}</cite></footer>
+                            </blockquote>
+                          </article>
+
+                          {% endfor %}
+
+                        </div>
+                    </div>
+                  </div>
+              <!-- End Of Section -->
+              <div class="end-of-section">
+
+                <!-- Left Caption -->
+                <div class="pull-left">
+                  <span class="hiddend-sm hidden-xs">Would you like to check all of my posts? &nbsp; &nbsp;</span><a href="blog-page.html" class="btn btn-black btn-sm">Check my Blog Page!</a>
+                </div>
+
+                <!-- Post Carousel Navigation -->
+                <div class="post-carousel-control">
+                  <a class="post-carousel-prev" href="#">Previous</a>
+                  <a class="post-carousel-next" href="#">Next</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+    <!-- Blog / End -->
+
+
+</div>
+<!-- Page Content / End -->
+
+<!-- Scripts -->
+<script type="text/javascript" src="{% static 'Article/js/jquery-1.10.2.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'Article/js/page-loader.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'Article/js/bootstrap.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'Article/js/jquery.easing.min.js' %}"></script>
+<!-- <script type="text/javascript" src="{% static 'Article/js/jquery.validate.min.js' %}"></script> -->
+<script type="text/javascript" src="{% static 'Article/js/jquery.localscroll-1.2.7-min.js' %}"></script>
+<script type="text/javascript" src="{% static 'Article/js/jquery.scrollTo-1.4.3.1-min.js' %}"></script>
+<script type="text/javascript" src="{% static 'Article/js/jquery.fitvids.js' %}"></script>
+<script type="text/javascript" src="{% static 'Article/js/jquery.appear.js' %}"></script>
+<script type="text/javascript" src="{% static 'Article/js/waypoints.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'Article/js/owl.carousel.min.js' %}"></script>
+
+
+<!-- Custom Script -->
+<script type="text/javascript" src="{% static 'Article/js/custom.js' %}"></script>
+
+
+
+</body>
+
+</html>
