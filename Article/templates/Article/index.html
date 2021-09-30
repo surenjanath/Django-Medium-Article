@@ -13,10 +13,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Website that shows all my medium Articles">
 <meta name="keywords" content="Personal Page">
-<meta name="author" content="Suelo">
+<meta name="author" content="Surenjanath">
 
-<link rel="shortcut icon" href="{% static 'Article/images/favicon.png' %}">
-
+<link rel="shortcut icon" href="{% static 'Article/images/favicon.ico' %}">
+<link rel="apple-touch-icon" sizes="180x180" href="{% static 'Article/images/apple-touch-icon.png' %}">
+<link rel="icon" type="image/png" sizes="32x32" href="{% static 'Article/images/favicon-32x32.png' %}">
+<link rel="manifest" href="{% static 'Article/images/site.webmanifest' %}">
 
 <!-- Retina Images -->
 <script>if((window.devicePixelRatio===undefined?1:window.devicePixelRatio)>1)
@@ -126,7 +128,7 @@
             <div class="profile-content">
             	<h1 class="short">Surenjanath Singh</h1>
                 <h5>I am a <span class="text-primary">Python</span> developer.</h5>
-                <a href="" class="btn btn-primary" target="_blank">Read My articles on Medium</a>
+                <a href="https://surenjanath.medium.com/" class="btn btn-primary" target="_blank">Read My articles on Medium</a>
 
             </div>
 
@@ -159,28 +161,35 @@
 
               <!-- Post Carousel -->
               <div class="post-carousel animated slide-in-top">
+                {% for i in Articles %}
                 <!-- Single Post -->
                 <article class="post post-carousel-item">
-                    <div class="post-image"><img src="{% static 'Article/images/blog/post_01.jpg' %}" alt="" /></div>
+                    <div class="post-image">
+                      {% if i.Image != None %}
+                      <img src="{{i.Image}}" alt="" /></div>
+                      {% else %}
+                      <img src= "{% static 'Article/images/blog/post_01.jpg' %}" alt="" /></div>
+
+                      {% endif %}
                     <div class="post-content-holder">
                         <div class="post-content">
                             <div class="post-info clearfix">
-                                <span class="post-date">22 May, 2014</span>
+                                <span class="post-date">{{i.Posted}}</span>
                                 <div class="post-meta">
-                                    <span><i class="fa fa-comment"></i><a href="#">4 comments</a></span>
-                                    <span><i class="fa fa-tag"></i><a href="#">Webdesign</a></span>
+                                    <span><i class="fa fa-comment"></i><a href="#">{{i.Comment}} comments</a></span>
+                                    <span><i class="fa fa-tag"></i><a href="#">WebScraping</a></span>
                                 </div>
                             </div>
                             <div class="post-text">
-                                <h3><a href="single-post.html">Awesome Seattle Cycle Trip</a></h3>
-                                <p class="lead">Per sint eirmod expetenda te. Pro ne essent.</p>
-                                <p>Per ea tibique fabellas electram. Ea aliquam corpora vis. Ne quot civibus atomorum quo. </p>
-                                <a href="single-post.html" class="btn btn-primary btn-sm">Read more</a>
+                                <h3><a href="{{i.Link}}">{{i.Title}}</a></h3>
+                                <!-- <p class="lead">Per sint eirmod expetenda te. Pro ne essent.</p> -->
+                                <p>{{i.Description}}</p>
+                                <a href="{{i.Link}}" class="btn btn-primary btn-sm">Read more</a>
                             </div>
                         </div>
                     </div>
                 </article>
-
+                {% endfor %}
               </div>
               <div  class="row">
                 <div class="blog-slider-holder  black dark">
@@ -216,7 +225,7 @@
 
                 <!-- Left Caption -->
                 <div class="pull-left">
-                  <span class="hiddend-sm hidden-xs">Would you like to check all of my posts? &nbsp; &nbsp;</span><a href="blog-page.html" class="btn btn-black btn-sm">Check my Blog Page!</a>
+                  <span class="hiddend-sm hidden-xs">Would you like to check me out on LinkedIn? &nbsp; &nbsp;</span><a href="https://www.linkedin.com/in/surenjanath/" class="btn btn-black btn-sm">Check my LinkedIn Page!</a>
                 </div>
 
                 <!-- Post Carousel Navigation -->
