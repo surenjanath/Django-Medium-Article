@@ -98,5 +98,17 @@ def Scrape(url,header):
           except:
             pass
     else:
-        print(r.status_code)
+        pass
+    if len(Articles) < 1:
+
+        Articles.append({
+            'Title'         : '',
+            'Image'         : None,
+            'Reading'       : '',
+            'Posted'        : '',
+            'Description'   : '',
+            'Comment'       : '',
+            'Link'          : 'Link'
+
+        })
     return Articles
