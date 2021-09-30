@@ -7,7 +7,7 @@ from django.views.decorators.http import require_POST
 
 def Home(request) :
 
-    FBacks         = feedback.objects.order_by('Created')
+    FBacks         = feedback.objects
     form           = FeedbackForm()
     context = {
                'Feedbacks' : FBacks,
