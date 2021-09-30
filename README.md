@@ -32,7 +32,7 @@ From your command line:
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/amitmerchant1990/pomolectron
+$ git clone https://github.com/surenjanath/Django-Medium-Article
 
 # Install django if you already don't have it.
 $ pip install django
