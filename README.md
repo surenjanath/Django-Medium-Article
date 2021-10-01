@@ -1,10 +1,13 @@
 # Django-Medium-Article
 <h1 align="center">
   <br>
-  <a href=""><img src="https://raw.githubusercontent.com/surenjanath/Django-Medium-Article/master/Readme_images/Website.png" alt="Pomolectron" width="400"></a>
+  <a href=""><img src="https://raw.githubusercontent.com/surenjanath/Django-Medium-Article/master/Readme_images/Website.png" alt="MediumProject" width="400"></a>
   <br>
  
 </h1>
+
+
+<h3 align="center">Here is a live deployment of the website : <a href="https://surenjanath.herokuapp.com/" target="_blank">Live</a>  </h3>
 
 <h4 align="center"><a href="https://surenjanath.medium.com/creating-a-website-with-django-and-installing-a-template-and-passing-data-to-the-template-from-form-341ef55d6dd8" target="_blank">Creating a website with Django</a>  and installing a template and passing data to the template from form.</h4>
 
